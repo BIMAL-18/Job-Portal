@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <!doctype html>
 <html lang="en">
@@ -52,18 +55,20 @@
           $email=$_POST['email'];
           $pass=$_POST['pass'];
         
-
-        $query= mysqli_query($conn,"select * from admin_login where admin_email ='$email' and admin_pass = '$pass'");
+          $query= mysqli_query($conn,"select * from admin_login where admin_email ='$email' and admin_pass = '$pass'");
+if($query){
 
 
 
         if(mysqli_num_rows($query)>0){
+            $_SESSION['email']= $email;
             header('location:admin_dashboard.php');
 
         }else{
-            echo "<script>alert('Please try again')</script>";
+            echo "<script>alert('Email or password is incorrect please try again')</script>";
         }
         }
 
+    }
     ?>
 
