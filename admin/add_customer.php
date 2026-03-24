@@ -134,69 +134,68 @@ if($_SESSION['email'] ==true){
               <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="#">Customer</a></li>
+    <li class="breadcrumb-item"><a href="Customers.php">Customer</a></li>
+    <li class="breadcrumb-item"><a href="#">Add Customer</a></li>
   </ol>
 </nav>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
        
-<h1 class="h2">Customers</h1>
+<h1 class="h2">Add Customer</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
               
               </div>
-              <a href="add_customer.php" class="btn btn-primary">Add Customer</a>
+              <!-- <a href="add_customer.php" class="btn btn-primary">Add Customer</a> -->
             </div>
+
           </div>
-          <table id="example" class="display">
-        <thead>
-            <tr>
-                <th style="text-align: left;">#SL</th>
-                <!-- <th>Name</th> -->
-                <th>Email</th>
-                <th>Username</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Admin Type</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-                        <?php
+          <div style="width: 60%; margin-left:25%; background-color: #F2F4F4;">
+
+          <form action="" style="margin: 3% ; padding: 3%;">
+            <div class="form-group">
+                <label for="Customer Email">Enter Email</label>
+                <input type="email" class="form-control" placeholder="Enter Customer Email">
+
+            </div>
+            <div class="form-group">
+                <label for="Customer Username">Enter Username</label>
+                <input type="text" class="form-control" placeholder="Enter Customer Username">
+
+            </div>
+            <div class="form-group">
+                <label for="First Name">Enter Password</label>
+                <input type="pass" class="form-control" placeholder="Enter Password">
+
+            </div>
+            <div class="form-group">
+                <label for="First Name">Enter First Name</label>
+                <input type="text" class="form-control" placeholder="Enter Customer first Name">
+
+            </div>
+            <div class="form-group">
+                <label for="Last Name">Enter Last Name</label>
+                <input type="text" class="form-control" placeholder="Enter Customer last Name">
+
+            </div>
+            <div class="form-group">
+                <label for="Admin Type">Admin Type</label>
+                <select name="admin_type" class="form-control" id="admin_type">
+                    <option value="1">Super Admin</option>
+                    <option value="1">Customer Admin</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+              
+                <input type="submit" class="btn btn-block btn-success" placeholder="Save" name="submit" id="submit">
 
 
-                    include('connection/db.php');
-
-                    $query =mysqli_query($conn,"select * from admin_login");
-
-                    while($row = mysqli_fetch_array($query)){
+            </div>
 
 
-                    ?>
-                    <tr>
-    <td style="text-align: left;"><?php echo $row['id'] ?></td>
-    <td><?php echo $row['admin_email'] ?></td>
-    <td><?php echo $row['admin_username'] ?></td>
-    <td><?php echo $row['first_name'] ?></td>
-    <td><?php echo $row['last_name'] ?></td>
-    <td><?php echo $row['admin_type'] ?></td>
-  </tr>
 
-  <?php } ?>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th style="text-align: left;">#SL</th>
-                <!-- <th>Name</th> -->
-                <th>Email</th>
-                <th>Username</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Admin Type</th>
-            </tr>
-
-        </tfoot>
-    </table>
-
+          </form>
+          </div>
           <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 
           <div class="table-responsive">
