@@ -1,0 +1,25 @@
+<svg width="100%" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+  </defs>
+
+  <!-- Logo mark: left side -->
+  <!-- Outer arc / bracket left -->
+  <path d="M 190 110 Q 148 110 148 160 Q 148 210 190 210" fill="none" stroke="#5B4FD4" stroke-width="7" stroke-linecap="round" style="fill:none;stroke:rgb(91, 79, 212);color:rgb(0, 0, 0);stroke-width:7px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Outer arc / bracket right -->
+  <path d="M 242 110 Q 284 110 284 160 Q 284 210 242 210" fill="none" stroke="#2BB89A" stroke-width="7" stroke-linecap="round" style="fill:none;stroke:rgb(43, 184, 154);color:rgb(0, 0, 0);stroke-width:7px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Inner upward arrow (career growth) -->
+  <line x1="216" y1="195" x2="216" y2="128" stroke="#5B4FD4" stroke-width="5" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgb(91, 79, 212);color:rgb(0, 0, 0);stroke-width:5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <polyline points="202,145 216,128 230,145" fill="none" stroke="#5B4FD4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgb(91, 79, 212);color:rgb(0, 0, 0);stroke-width:5px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Dot accent -->
+  <circle cx="216" cy="205" r="7" fill="#2BB89A" style="fill:rgb(43, 184, 154);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="216" cy="205" r="11" fill="none" stroke="#2BB89A" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6" style="fill:none;stroke:rgb(43, 184, 154);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-dasharray:3px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Wordmark -->
+  <text x="310" y="178" style="fill:rgb(26, 26, 46);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Syne, sans-serif;font-size:52px;font-weight:800;text-anchor:start;dominant-baseline:auto">WorkWay</text>
+
+  <!-- Tagline -->
+  <text x="312" y="210" style="fill:rgb(107, 107, 138);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Syne, sans-serif;font-size:14px;font-weight:700;text-anchor:start;dominant-baseline:auto">YOUR NEXT ROLE AWAITS</text>
+</svg>
