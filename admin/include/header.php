@@ -48,6 +48,12 @@ Retrieved 2026-03-25, License - CC BY-SA 3.0
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
 
+<!-- Load latest jQuery first
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Load country-state-city plugin after jQuery -->
+<script src="https://geodata.solutions/includes/countrystatecity.js"></script> -->
+
   </head>
 
 

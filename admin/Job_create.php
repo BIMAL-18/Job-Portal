@@ -18,7 +18,7 @@ include('include/sidebar.php');
               <div class="btn-group mr-2">
               
               </div>
-              <a href="add_company.php" class="btn btn-primary">Create Job</a>
+              <a href="add_create_job.php" class="btn btn-primary">Create Job</a>
             </div>
           </div>
           <table id="example" class="display">
@@ -61,8 +61,8 @@ include('include/sidebar.php');
 
       <div class="row">
         <div class="btn-group">
-          <a href="company_edit.php?edit=<?php echo $row['job_id'] ?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
-          <a href="company_delete.php?del=<?php echo $row['job_id'] ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+          <a href="job_edit.php?edit=<?php echo $row['job_id'] ?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a href="job_delete.php?del=<?php echo $row['job_id'] ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
 
         </div>
 
