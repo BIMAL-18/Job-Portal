@@ -1,9 +1,21 @@
 <?php
+include('connection/db.php');
 
 include('include/header.php');
 include('include/sidebar.php');
-?>
+$id = $_GET['edit'];
 
+$query =mysqli_query($conn,"select * from admin_login where id='$id'");
+while ($row=mysqli_fetch_array($query)) {
+    $email = $row['admin_email'];
+    $admin_pass = $row['admin_pass'];
+    $admin_username = $row['admin_username'];
+    $first_name = $row['first_name'];
+    $last_name = $row['last_name'];
+    $admin_type = $row['admin_type'];
+}
+
+?>
 
 
 
@@ -12,60 +24,62 @@ include('include/sidebar.php');
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
     <li class="breadcrumb-item"><a href="Customers.php">Customer</a></li>
-    <li class="breadcrumb-item"><a href="#">Add Customer</a></li>
+    <li class="breadcrumb-item"><a href="#">Update Customer</a></li>
   </ol>
 </nav>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
        
-<h1 class="h2">Add Customer</h1>
+<h1 class="h2">Update Customer</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
               
               </div>
-              <!-- <a href="add_customer.php" class="btn btn-primary">Add Customer</a> -->
+              <!-- <a href="Update_customer.php" class="btn btn-primary">Update Customer</a> -->
             </div>
 
           </div>
           <div style="width: 60%; margin-left:25%; background-color: #F2F4F4;">
             
             <div id="msg"></div>
-            <form action="" method="post" style="margin: 3% ; padding: 3%;" name="customer_form" id="customer_form">
+            <form action="" method="post" style="margin: 3% ; pUpdateing: 3%;" name="customer_form" id="customer_form">
               <div class="form-group">
                 <label for="Customer Email">Enter Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Customer Email">
+                <input type="email" name="email" id="email" value="<?php echo $email ?>" class="form-control" placeholder="Enter Customer Email">
 
             </div>
             <div class="form-group">
                 <label for="Customer Username">Enter Username</label>
-                <input type="text" name="Username" id="Username" class="form-control" placeholder="Enter Customer Username">
+                <input type="text" name="Username" id="Username"  value="<?php echo $admin_username ?>" class="form-control" placeholder="Enter Customer Username">
 
             </div>
             <div class="form-group">
                 <label for="First Name">Enter Password</label>
-                <input type="pass" name="Password" id="Password" class="form-control" placeholder="Enter Password">
+                <input type="pass" name="Password" id="Password"  value="<?php echo $admin_pass ?>" class="form-control" placeholder="Enter Password">
 
             </div>
             <div class="form-group">
                 <label for="First Name">Enter First Name</label>
-                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Enter Customer first Name">
+                <input type="text" name="first_name" id="first_name" value="<?php echo $first_name ?>" class="form-control" placeholder="Enter Customer first Name">
 
             </div>
             <div class="form-group">
                 <label for="Last Name">Enter Last Name</label>
-                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Enter Customer last Name">
+                <input type="text" name="last_name" id="last_name" value="<?php echo $last_name ?>" class="form-control" placeholder="Enter Customer last Name">
 
             </div>
             <div class="form-group">
                 <label for="Admin Type">Admin Type</label>
-                <select name="admin_type"  class="form-control" id="admin_type">
+                <select name="admin_type"  class="form-control"  value="<?php echo $admin_type ?>" id="admin_type">
                     <option value="1">Super Admin</option>
                     <option value="2">Customer Admin</option>
                     </select>
 
                 </div>
+
                 <div class="form-group">
+                    <input type="hidden" name="id" id="id" value="<?php echo $_GET['edit']; ?>">
               
-                <input type="submit" class="btn btn-block btn-success" placeholder="Save" name="submit" id="submit">
+                <input type="submit" class="btn btn-block btn-success" placeholder="Update" name="submit" id="submit">
 
 
             </div>
@@ -106,40 +120,28 @@ include('include/sidebar.php');
         });
     </script>
 
-    <script>
-      $(document).ready(function(){
-     $("#submit").click(function () {
-      var email = $("#email").val();
-      var Username = $("#Username").val();
-      var Password = $("#Password").val();
-      var first_name = $("#first_name").val();
-      var last_name = $("#last_name").val();
-      var admin_type = $("#admin_type").val();
-
-
-      var data = $("#customer_form").serialize();
-
-      $.ajax({
-        type:"POST",
-        url:"Customer_add.php",
-        data:data,
-        success:function(data){
-
-  // $("#msg").html(data);
-  // data read from customer_add.php
-  alert(data);
-
-
-        }
-      });
-
-      // alert(admin_type);
-      // alert(email);  
-      
-      
-     })
-      });last_name
-    </script>
-
   </body>
 </html>
+
+
+<?php
+include('connection/db.php');
+if(isset(($_POST['submit']))){
+    
+    $id =$_POST['id'];
+    $email =$_POST['email'];
+    $Username =$_POST['Username'];
+    $Password =$_POST['Password'];
+    $first_name =$_POST['first_name'];
+    $last_name =$_POST['last_name'];
+    $admin_type =$_POST['admin_type'];
+    $query1 = mysqli_query($conn,"update admin_login set admin_email = '$email',admin_username='$Username',admin_pass ='$Password', first_name ='$first_name',last_name='$last_name',admin_type='$admin_type' where id = '$id'");
+}
+
+if($query1){
+     echo "<script>alert('Record has been Updated successfully')</script>";
+}else{
+    // echo "<script>alert('Error Updating record')</script>";
+}
+
+?>

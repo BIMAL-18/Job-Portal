@@ -18,6 +18,18 @@ if($_SESSION['email'] ==true){
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
     <title>Dashboard Template for Bootstrap</title>
+
+<!-- icon
+  -->
+<!--
+Source - https://stackoverflow.com/a/18225474
+Posted by edsioufi, modified by community. See post 'Timeline' for change history
+Retrieved 2026-03-25, License - CC BY-SA 3.0
+-->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+
    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 

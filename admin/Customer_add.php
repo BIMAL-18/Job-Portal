@@ -13,10 +13,9 @@ values('$email','$Password','$username','$first_name','$last_name','$admin_type'
 var_dump($query);
 
 if($query){
-
-echo "<div class='alert alert-success>Data Inserted Sucessfully<div/>";
+    echo "<div class='alert alert-success'>Data Inserted Successfully</div>";
 }else{
-    echo "<div class='alert alert-danger> Some error come </div>";
+    echo "<div class='alert alert-danger'>Some error occurred</div>";
 }
 
 
