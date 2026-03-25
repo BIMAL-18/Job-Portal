@@ -27,38 +27,39 @@ include('include/sidebar.php');
 
           </div>
           <div style="width: 60%; margin-left:25%; background-color: #F2F4F4;">
-
-          <form action="" style="margin: 3% ; padding: 3%;">
-            <div class="form-group">
+            
+            <div id="msg"></div>
+            <form action="" method="post" style="margin: 3% ; padding: 3%;" name="customer_form" id="customer_form">
+              <div class="form-group">
                 <label for="Customer Email">Enter Email</label>
-                <input type="email" class="form-control" placeholder="Enter Customer Email">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Customer Email">
 
             </div>
             <div class="form-group">
                 <label for="Customer Username">Enter Username</label>
-                <input type="text" class="form-control" placeholder="Enter Customer Username">
+                <input type="text" name="Username" id="Username" class="form-control" placeholder="Enter Customer Username">
 
             </div>
             <div class="form-group">
                 <label for="First Name">Enter Password</label>
-                <input type="pass" class="form-control" placeholder="Enter Password">
+                <input type="pass" name="Password" id="Password" class="form-control" placeholder="Enter Password">
 
             </div>
             <div class="form-group">
                 <label for="First Name">Enter First Name</label>
-                <input type="text" class="form-control" placeholder="Enter Customer first Name">
+                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Enter Customer first Name">
 
             </div>
             <div class="form-group">
                 <label for="Last Name">Enter Last Name</label>
-                <input type="text" class="form-control" placeholder="Enter Customer last Name">
+                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Enter Customer last Name">
 
             </div>
             <div class="form-group">
                 <label for="Admin Type">Admin Type</label>
-                <select name="admin_type" class="form-control" id="admin_type">
+                <select name="admin_type"  class="form-control" id="admin_type">
                     <option value="1">Super Admin</option>
-                    <option value="1">Customer Admin</option>
+                    <option value="2">Customer Admin</option>
                     </select>
 
                 </div>
@@ -103,6 +104,41 @@ include('include/sidebar.php');
         $(document).ready(function(){
             $('#example').DataTable();
         });
+    </script>
+
+    <script>
+      $(document).ready(function(){
+     $("#submit").click(function () {
+      var email = $("#email").val();
+      var Username = $("#Username").val();
+      var Password = $("#Password").val();
+      var first_name = $("#first_name").val();
+      var last_name = $("#last_name").val();
+      var admin_type = $("#admin_type").val();
+
+
+      var data = $("#customer_form").serialize();
+
+      $.ajax({
+        type:"POST",
+        url:"Customer_add.php",
+        data:data,
+        success:function(data){
+
+  // $("#msg").html(data);
+  // data read from customer_add.php
+  alert(data);
+
+
+        }
+      });
+
+      // alert(admin_type);
+      // alert(email);
+      
+      
+     })
+      });last_name
     </script>
 
   </body>
