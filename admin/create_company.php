@@ -26,7 +26,6 @@ include('include/sidebar.php');
         <thead>
             <tr>
                 <th style="text-align: left;">#SL</th>
-                <!-- <th>Name</th> -->
                 <th>Company Name</th>
                 <th>Description</th>
                 <th>Action</th>
@@ -54,8 +53,8 @@ include('include/sidebar.php');
 
       <div class="row">
         <div class="btn-group">
-          <a href="customer_edit.php?edit=<?php echo $row['company_id'] ?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
-          <a href="customer_delete.php?del=<?php echo $row['company_id'] ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+          <a href="company_edit.php?edit=<?php echo $row['company_id'] ?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+          <a href="company_delete.php?del=<?php echo $row['company_id'] ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
 
         </div>
 
@@ -72,7 +71,7 @@ include('include/sidebar.php');
                 <th>Company Name</th>
                 <th>Description</th>
                 <th>Action</th>
-                <
+                
             </tr>
 
         </tfoot>
