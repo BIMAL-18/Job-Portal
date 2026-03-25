@@ -54,7 +54,7 @@ while ($row=mysqli_fetch_array($query)) {
             </div>
             <div class="form-group">
                 <label for="First Name">Enter Password</label>
-                <input type="pass" name="Password" id="Password"  value="<?php echo $admin_pass ?>" class="form-control" placeholder="Enter Password">
+                <input type="password" name="Password" id="Password"  value="<?php echo $admin_pass ?>" class="form-control" placeholder="Enter Password">
 
             </div>
             <div class="form-group">
@@ -67,7 +67,7 @@ while ($row=mysqli_fetch_array($query)) {
                 <input type="text" name="last_name" id="last_name" value="<?php echo $last_name ?>" class="form-control" placeholder="Enter Customer last Name">
 
             </div>
-            <div class="form-group">
+            <div class="form-group" style="text-align: left;">
                 <label for="Admin Type">Admin Type</label>
                 <select name="admin_type"  class="form-control"  value="<?php echo $admin_type ?>" id="admin_type">
                     <option value="1">Super Admin</option>
@@ -126,22 +126,30 @@ while ($row=mysqli_fetch_array($query)) {
 
 <?php
 include('connection/db.php');
-if(isset(($_POST['submit']))){
-    
-    $id =$_POST['id'];
-    $email =$_POST['email'];
-    $Username =$_POST['Username'];
-    $Password =$_POST['Password'];
-    $first_name =$_POST['first_name'];
-    $last_name =$_POST['last_name'];
-    $admin_type =$_POST['admin_type'];
-    $query1 = mysqli_query($conn,"update admin_login set admin_email = '$email',admin_username='$Username',admin_pass ='$Password', first_name ='$first_name',last_name='$last_name',admin_type='$admin_type' where id = '$id'");
-}
 
-if($query1){
-     echo "<script>alert('Record has been Updated successfully')</script>";
-}else{
-    // echo "<script>alert('Error Updating record')</script>";
-}
+if(isset($_POST['submit'])){
 
+    $id = $_POST['id'];
+    $email = $_POST['email'];
+    $Username = $_POST['Username'];
+    $Password = $_POST['Password'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $admin_type = $_POST['admin_type'];
+
+    $query1 = mysqli_query($conn,"UPDATE admin_login SET 
+        admin_email='$email',   
+        admin_username='$Username',
+        admin_pass='$Password',
+        first_name='$first_name',
+        last_name='$last_name',
+        admin_type='$admin_type'
+        WHERE id='$id'");
+
+    if($query1){
+        echo "<script>alert('Record has been Updated successfully')</script>";
+    }else{
+        echo "<script>alert('Error Updating record')</script>";
+    }
+}
 ?>
