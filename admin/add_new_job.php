@@ -20,4 +20,4 @@ if($query){
 }else{
     echo "Some error occurred";
 }
-?>
+?>      
