@@ -10,6 +10,7 @@ $query = mysqli_query($conn,"select * from company where company_id='$id'");
 while ($row=mysqli_fetch_array($query)) {
     $company_name = $row['company'];
     $des = $row['des'];
+    $admin = $row['admin'];
 }
 ?>
 
@@ -43,6 +44,20 @@ while ($row=mysqli_fetch_array($query)) {
                 <label>Enter Description</label>
                 <textarea name="des" id="des" class="form-control" cols="30" rows="10"><?php echo $des; ?></textarea>
             </div>
+                        <div class="form-group">
+    <label for="Customer Username">Select Company Admin</label>
+    <select name="admin" id="admin" class="form-control">
+        <?php
+        include('connection/db.php');
+        $sql = mysqli_query($conn, "SELECT * FROM admin_login WHERE admin_type='2'");
+        while ($row = mysqli_fetch_array($sql)) {
+        ?>
+            <option value="<?php echo $row['admin_email']; ?>"><?php echo $row['admin_email']; ?></option>
+        <?php
+        }
+        ?>
+    </select>
+</div>
 
             <div class="form-group">
                 <input type="hidden" name="id" id="id" value="<?php echo $_GET['edit']; ?>">
@@ -62,10 +77,13 @@ if(isset($_POST['submit'])){
     $id = $_POST['id'];
     $company = $_POST['Company'];
     $des = $_POST['des'];
+    $admin = $_POST['admin'];
 
     $query1 = mysqli_query($conn,"UPDATE company SET 
         company='$company',
-        des='$des'
+        des='$des',
+        admin='$admin'
+
         WHERE company_id='$id'");
 
     if($query1){

@@ -28,6 +28,7 @@ include('include/sidebar.php');
                 <th style="text-align: left;">#SL</th>
                 <th>Company Name</th>
                 <th>Description</th>
+                <th>Admin</th>
                 <th>Action</th>
               
                 
@@ -49,6 +50,7 @@ include('include/sidebar.php');
     <td style="text-align: left;"><?php echo $row['company_id'] ?></td>
     <td><?php echo $row['company'] ?></td>
     <td><?php echo $row['des'] ?></td>
+    <td><?php echo $row['admin'] ?></td>
     <td>
 
       <div class="row">
@@ -70,6 +72,7 @@ include('include/sidebar.php');
                 <!-- <th>Name</th> -->
                 <th>Company Name</th>
                 <th>Description</th>
+                <th>Admin</th>
                 <th>Action</th>
                 
             </tr>

@@ -4,6 +4,13 @@ include('include/header.php');
 include('include/sidebar.php');
 ?>
 
+<?php
+include('connection/db.php');
+$query = mysqli_query($conn, "SELECT * FROM admin_login WHERE admin_type='2'");
+
+
+
+?>
 
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -42,6 +49,20 @@ include('include/sidebar.php');
                 <!-- <input type="text" name="Username" id="Username" class="form-control" placeholder="Enter Customer Username"> -->
 
             </div>
+
+
+            <div class="form-group">
+    <label for="Customer Username">Select Company Admin</label>
+    <select name="admin" id="admin" class="form-control">
+        <?php
+        while ($row = mysqli_fetch_array($query)) {
+        ?>
+            <option value="<?php echo $row['admin_email']; ?>"><?php echo $row['admin_email']; ?></option>
+        <?php
+        }
+        ?>
+    </select>
+</div>
 
             <!-- <div class="form-group">
                 <label for="Admin Type">Admin Type</label>
