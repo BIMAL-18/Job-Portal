@@ -3,6 +3,10 @@
 include('include/header.php');
 include('include/sidebar.php');
 ?>
+<?php
+$query = mysqli_query($conn,"select * from job_category");
+
+?>
 
 
 
@@ -42,6 +46,12 @@ include('include/sidebar.php');
                 <!-- <input type="text" name="Username" id="Username" class="form-control" placeholder="Enter Customer Username"> -->
 
             </div classname="form-group">
+            <div class="form-group">
+                <label for="Customer Username">Enter Keyword</label>
+                <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Enter Keyword Please">
+                <!-- <input type="text" name="Username" id="Username" class="form-control" placeholder="Enter Customer Username"> -->
+
+            </div classname="form-group">
             <label for=""></label>
 
             <div class="form-group">
@@ -62,6 +72,20 @@ include('include/sidebar.php');
     <label>City</label>
     <select name="city" class="form-control" id="cityId" disabled>
         <option value="">Select City</option>
+    </select>
+</div>
+<div class="form-group">
+    <label>Select Category</label>
+    <select name="category" class="form-control" id="category">
+        <?php
+        while($row = mysqli_fetch_array($query)){
+            ?>
+        <option value="<?php echo $row['id']; ?>"><?php echo $row['category']; ?></option>
+        <?php
+        }
+        ?>
+    </select>
+</div>
     </select>
 </div>
 
