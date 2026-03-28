@@ -10,7 +10,7 @@ $state = $_POST['state'];
 $city = $_POST['city'];
 //later add
 $category = $_POST['category'];
-$keyword = $_POST['Keyword']; // <-- fix here
+$keyword = $_POST['keyword']; // <-- fix here
 
 $query = mysqli_query($conn,"INSERT INTO all_jobs(customer_email,job_title,des,country,state,city,category,keyword) VALUES('$login','$Job_Title','$Description','$country','$state','$city','$category','$keyword')");
 

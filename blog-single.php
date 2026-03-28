@@ -48,8 +48,27 @@
 	      </div>
 	    </div>
 	  </nav>
-    <!-- END nav -->
-    
+<?php
+include('connection/db.php');
+
+// SEARCH QUERY
+if(isset($_POST['search'])){
+    $keyword = $_POST['key'];
+    $category = $_POST['category'];
+
+    $query1 = mysqli_query($conn, "
+        SELECT DISTINCT all_jobs.*, company.company AS company_name
+        FROM all_jobs 
+        LEFT JOIN company 
+        ON all_jobs.customer_email = company.admin
+        WHERE job_title LIKE '%$keyword%' 
+        AND ('$category' = '' OR all_jobs.category = '$category')
+    ");
+
+$sql=mysqli_query($conn,$query1);
+}
+?>
+
     <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
